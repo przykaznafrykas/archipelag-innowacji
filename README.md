@@ -1,11 +1,30 @@
-# Radar Innowacji
+# 🏝️ Archipelag Innowacji (PCI)
 
-Prototyp konkursowy PCI. Lokalnie otwórz pliki z katalogu `dist` przez serwer HTTP, np. `python3 -m http.server 8000 --directory dist`, a następnie odwiedź `http://localhost:8000`.
+**System wczesnego wykrywania, oceny potencjału i transferu „ukrytych” innowacji powstających w szkołach, uczelniach, samorządach (JST) oraz instytucjach publicznych.**
 
-Sekcja „Metodyka oceny” zawiera opis zasad, dane i materiały konkursowe. Aby przejść scenariusze, otwórz karty „Zielone klasy” i „Dostępna gmina”. Nowe zgłoszenia i szkice kontaktu są przechowywane w pamięci bieżącej przeglądarki. Projekty i partnerzy widoczni przy pierwszym uruchomieniu są fikcyjni.
+Projekt opracowany jako prototyp rozwiązania na wyzwanie **„Radar innowacji” Podkarpackiego Centrum Innowacji (PCI)**[cite: 1].
 
-Projekt działa bez serwera aplikacyjnego. Wspólna baza i rzeczywisty kontakt z partnerami wymagają kont, autoryzacji i dodatkowej infrastruktury.
+---
 
-Granice województw pochodzą z [geoBoundaries POL ADM1](https://www.geoboundaries.org/api/current/gbOpen/POL/ADM1/), na podstawie danych OpenStreetMap i Wambacher. Geometria jest przeliczona na ścieżki SVG i udostępniona na licencji [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). Znaczniki pokazują sumę zgłoszeń w regionie. Zgłoszenia ze starszej wersji bez województwa są widoczne w widoku całej Polski.
+## 🎯 Rozwiązywany problem
+Wartościowe innowacje (technologiczne, organizacyjne, społeczne, edukacyjne i procesowe) często powstają lokalnie, ale pozostają znane wyłącznie w miejscu ich wytworzenia[cite: 1, 2]. Brak jednego mechanizmu identyfikacji i porównywania pomysłów sprawia, że rozwiązania nie są skalowane, a różne instytucje niezależnie rozwiązują te same problemy[cite: 1].
 
-Dane patentowe: 10 rekordów metadanych z [European Publication Server](https://data.epo.org/publication-server/). Każdy rekord prowadzi do odpowiadającej mu publikacji EPO. Sekcja „Dane patentowe EPO” umożliwia import oficjalnego pliku XML publikacji z polskim zgłaszającym lub uprawnionym. Kategoria pochodzi z uproszczonych reguł IPC, a region z rozpoznanej miejscowości. Katalog startowy nie jest pełnym rejestrem i nie odświeża się automatycznie.
+## ✨ Główne funkcje platformy
+- **Mapa Polski (16 województw) + Radar HUD** – interaktywna wizualizacja SVG wykrytych inicjatyw z całego kraju, podziałem na sektory specjalizacji (Lotnictwo i Kosmos, ICT, Motoryzacja, Jakość życia, Społeczno-organizacyjne) oraz wektorami transferu między regionami[cite: 1, 2].
+- **Skaner AI & Kreator Zgłoszeń** – symulator agregacji danych z rejestrów publicznych (BIP JST, PBN, UPRP, EPO, NCBR, Interreg) oraz formularz zgłoszeniowy wspierający młodych innowatorów (16–30 lat)[cite: 1, 2, 4].
+- **Silnik Oceny Potencjału & Anty-duplikacji** – przejrzysty scoring wielokryterialny (0–100 pkt) z wykresem radarowym, oceną poziomu TRL oraz weryfikacją podobieństw w bazach patentowych i naukowych[cite: 2, 3, 4].
+- **Rekomendacje Ścieżek & Matchmaking** – automatyczne dopasowanie ścieżki rozwoju (*PCI ProtoLab*, transfer między JST, granty B+R, komercjalizacja) oraz łączenie twórców z odbiorcami i partnerami[cite: 1, 2].
+- **Paszport Innowacji** – ustandaryzowana karta projektu z uzasadnieniem rekomendacji i miernikami skuteczności (KPI)[cite: 2, 4].
+- **Tryb Demonstracyjny (2 scenariusze)** – wbudowane przypadki użycia dla innowacji technologicznej (uczelnia) oraz społeczno-organizacyjnej (JST + szkoła)[cite: 2, 4].
+
+## 🛠️ Stack technologiczny i uruchomienie
+Aplikacja została zbudowana w architekturze **zero-dependency (Single-File Web App)** w czystym **HTML5, CSS3 i Vanilla JavaScript** z natywną kartografią **SVG** — bez zewnętrznych bibliotek i procesu budowania.
+
+### Uruchomienie lokalne
+1. Sklonuj repozytorium lub pobierz plik `index.html`.
+2. Otwórz `index.html` bezpośrednio w dowolnej nowoczesnej przeglądarce.
+
+### Wdrożenie na GitHub Pages
+1. Przejdź do **Settings → Pages** w repozytorium.
+2. Wybierz źródło **Deploy from a branch**, gałąź `main` oraz katalog `/ (root)`.
+3. Zapisz zmiany — aplikacja będzie dostępna pod adresem `https://<uzytkownik>.github.io/<nazwa-repozytorium>/`.
